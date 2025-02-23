@@ -5,8 +5,11 @@ from .models import *
 
 def S_01(request):
     students=Student.objects.all()
+    kurs = Kurs.objects.all()
+
 
     st_1={
+        'kursning': kurs,
         'studentning':students,
         'title':'Student title'
     }
@@ -15,8 +18,10 @@ def S_01(request):
 
 def K_01(request):
     kurs = Kurs.objects.all()
+    students = Student.objects.all()
 
     ku_1={
+        'studentning': students,
         'kursning':kurs,
         'title':'Kurs title'
     }
